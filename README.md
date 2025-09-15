@@ -3,6 +3,8 @@
 
 🚀 Project Overview
 
+
+
 This project demonstrates how to configure an end-to-end logging pipeline on AWS:
 
 Collect Apache server logs on Amazon Linux
@@ -17,9 +19,12 @@ This setup provides centralized log management, cost optimization, and observabi
 
 
 🛠️ Architecture
+
+
 Apache Server → CloudWatch Logs → Amazon S3 → Lifecycle Policy → Glacier (Archive)
 
 ⚡ Steps Implemented
+
 
 1️⃣ Apache Log Collection
 
@@ -36,6 +41,7 @@ Configured Apache logs to stream into CloudWatch
 
 3️⃣ Export Logs to S3
 
+
 Created an export task with AWS CLI:
 
 START_TIME=$(date -u -d '24 hours ago' +%s)000
@@ -50,6 +56,8 @@ aws logs create-export-task \
   --destination-prefix "AWSLogs/<account-id>"
 
 4️⃣ S3 Bucket Policy
+
+
 {
   "Version": "2012-10-17",
   "Statement": [
